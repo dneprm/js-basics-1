@@ -95,9 +95,11 @@ function chessBoard(size) {
         grid += black;
       }
     }
-    grid += newline;
+     if(i<size-1) {
+        grid += newline;
+      }
   }
-  console.log(grid);
+  return grid;
 }
 module.exports.squaresOfMax = squaresOfMax;
 module.exports.drawTriangle = drawTriangle;
