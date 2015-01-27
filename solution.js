@@ -1,20 +1,27 @@
 function squaresOfMax(a, b, c) {
   // Write a function that takes three numbers and returns
   // sum of squares of two largest
-  if (a>=b) {
-    if (b>=c) {
+  /*if (a>=b) {
+    if(b>=c) {
       return a*a + b*b;
     } else {
       return a*a + c*c;
-    } 
+    }
   } else if (a>=c) {
-      if(c>=b) {
-        return a*a + c*c;
-      } else {
-        return a*a + b*b;
-      }
+    if (c>=b) {
+      return a*a + c*c;
     } else {
-      return b*b + c*c;
+      return a*a + b*b;
+    }
+  } else {
+    return b*b + c*c;
+  }*/
+  if ((a<=b)&&(a<=c)) {
+    return b*b + c*c;
+  } else if ((b<=c)&&(b<=a)) {
+    return a*a + c*c;
+  } else {
+    return a*a + b*b;
   }
 }
 
@@ -44,7 +51,7 @@ function fizzBuzz() {
   // When you have that working, modify your program to print "FizzBuzz",
   // for numbers that are divisible by both 3 and 5 (and still print "Fizz"
   // or "Buzz" for numbers divisible by only one of those).
-for (var i=1; i<=100; i++) {
+/*for (var i=1; i<=100; i++) {
   if(i%3===0) {
     if(i%5===0) {
       console.log("FizzBuzz");
@@ -60,6 +67,17 @@ for (var i=1; i<=100; i++) {
   } else {
     console.log(i);
   } 
+}*/
+for (var i=1; i<=100; i++) {
+  if ((i%3===0)&&(i%5===0)) {
+    console.log("FizzBuzz");
+  } else if (i%3===0) {
+    console.log("Fizz");
+  } else if (i%5===0) {
+    console.log("Buzz");
+  } else {
+    console.log(i);
+  }
 }
 }
 
@@ -101,6 +119,7 @@ function chessBoard(size) {
   }
   return grid;
 }
+
 module.exports.squaresOfMax = squaresOfMax;
 module.exports.drawTriangle = drawTriangle;
 module.exports.fizzBuzz = fizzBuzz;
